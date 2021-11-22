@@ -1,0 +1,65 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+display:flex;
+align-items: center;
+justify-content: center;
+min-height: 100vh;
+border:2px solid blue;
+background: linear-gradient(rgb(199, 149, 214) 0%, rgb(248, 173, 185) 100%);
+}
+
+.wrapper{
+    border: 1.5rem solid rgb(226, 160, 153);
+    border-radius: 1.2rem ;
+    width: 900px;
+    height:500px;
+    background: rgb(188, 233, 214);
+  }
+  .btn-left{
+    border:none;
+    width:23px;
+    position: absolute;
+    top: 50%;
+    margin-left:-23px;
+    font-size:x-large;
+    color:rgb(4, 19, 14);
+    background: rgb(238, 131, 119);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+    border-radius: 2px;
+  }
+  .btn-left:hover{
+    cursor:pointer;
+    transform: translateY(4px);
+    background-color: rgb(204, 102, 91);
+    box-shadow: 0 2px rgb(233, 167, 160)
+  }
+
+  .btn-right{
+    border:none;
+    width:23px;
+    position: absolute;
+    margin-left:53.3rem;
+    top: 50%;
+    font-size:x-large;
+    color:rgb(4, 19, 14);
+    background: rgb(238, 131, 119);
+    box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+    border-radius: 2px;
+  }
+  .btn-right:hover{
+    cursor:pointer;
+    transform: translateY(4px);
+    background-color: rgb(204, 102, 91);
+    box-shadow: 0 2px rgb(233, 167, 160)
+  }
+.image{
+  min-height: 60vh;
+  background: url("../images/image1.jpg") center/cover fixed no-repeat;
+  border:1px solid black;
+  border-radius: 0.5rem;
+  position: relative;
+}
