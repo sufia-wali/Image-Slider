@@ -15,7 +15,7 @@ goToSlide(0);
 
 const prevSlide = function() {
   if(currentSlide===0){
-    currentSlide = maxSlide;
+    currentSlide = maxSlide-1;
   }
   else currentSlide--;
   goToSlide(currentSlide);
