@@ -1,30 +1,34 @@
-(function () {
-  const pic = ["image1", "image2", "image3", "image4", "image5", "image6"];
-  const pictures = document.querySelector('.image');
-  const buttons = document.querySelectorAll('.btn');
-  let count = 0;
+const slides = document.querySelectorAll('.slide'); //nodelist
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
 
-  buttons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      if (button.classList.contains('btn-left')) {
-        count--;
-        if (count < 0) {
-          count = pic.length - 1;
-        }
-        pictures.style.backgroundImage = `url('./images/${pic[count]}.jpg')`;
-      }
-      if (button.classList.contains('btn-right')) {
-        count++;
-        if (count > pic.length - 1) {
-          count = 0;
-        }
-        pictures.style.backgroundImage = `url('./images/${pic[count]}.jpg')`;
+let currentSlide = 0;
+let maxSlide = slides.length; //4
 
-      }
-    })
-  })
-})();
+const goToSlide = function(slide){
+slides.forEach((s, i) => (
+  s.style.transform = `translateX(${100*(i-slide)}%)`
+))
+};
 
+goToSlide(0);
 
+const prevSlide = function() {
+  if(currentSlide===0){
+    currentSlide = maxSlide;
+  }
+  else currentSlide--;
+  goToSlide(currentSlide);
+}
 
+const nextSlide = function () {
+  if(currentSlide === maxSlide-1){
+    currentSlide=0;
+  }
+  else currentSlide++;
+  goToSlide(currentSlide);
+}
+
+btnLeft.addEventListener('click', prevSlide);
+btnRight.addEventListener('click', nextSlide);
 
